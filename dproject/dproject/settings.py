@@ -122,3 +122,8 @@ staticfiles_dir = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+Login_URL = '/accounts/login/' # specify the URL to redirect users to when they need to log in, which is set to '/accounts/login/' in this case. This means that if a user tries to access a view that requires authentication and they are not logged in, they will be redirected to the login page at this URL.
+
+login_redirect_url = '/tweet/' # specify the URL to redirect users to after they have successfully logged in, which is set to '/tweet/' in this case. This means that after a user logs in successfully, they will be redirected to the '/tweet/' URL, which is likely the main page of the application where users can view and interact with tweets.
+logout_redirect_url = '/tweet/'

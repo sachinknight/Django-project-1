@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+    
+{% block title %}
+   Chai or tweet
+{% endblock %}
+
+{% block content %}
+    <h1 class=" text-center mt-4" > Welcome to Chai's Django Project </h1>
+    <h2>
+        {% if form.instance.pk %}
+            Edit Tweet
+        {% else %}
+            Create Tweet
+        {% endif %}
+
+        <!-- create form -->
+        <form method="post" enctype="multipart/form-data"  class="form"> <!-- enctype="multipart/form-data" is necessary for file upload -->
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+       
+        <a href="{% url 'tweet_list' %}" class="btn btn-secondary mt-2">Back to tweet list</a> <!-- back to the list page -->
+
+    </h2>
+
+    
+{% endblock %}

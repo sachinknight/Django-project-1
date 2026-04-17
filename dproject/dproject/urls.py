@@ -19,8 +19,12 @@ from django.contrib import admin
 from django.urls import path , include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth.urls import views as auth_views  # Import Django's built-in authentication views for login and logout
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("tweet/", include("tweet.urls")),
+    # for account
+    path("accounts/", include("django.contrib.auth.urls")),  # Include Django's built-in authentication URLs for login, logout, password reset, etc.
+        
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

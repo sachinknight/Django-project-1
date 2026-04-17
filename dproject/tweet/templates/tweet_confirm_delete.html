@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+    
+{% block title %}
+   Chai or tweet
+{% endblock %}
+
+{% block content %}
+    <h1 class=" text-center mt-4" > Are your sure that you want to that tweet </h1>
+    <form method="post" class="form"> <!-- enctype="multipart/form-data" is necessary for file upload -->
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Yes, delete it</button>
+        <a href="{% url 'tweet_list' %}" class="btn btn-secondary mt-2">No, go back to the tweet list</a> <!-- back to the list page -->
+    
+{% endblock %}
